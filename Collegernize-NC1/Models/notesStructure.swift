@@ -9,6 +9,6 @@
 //import UIKit
 //
 //struct notesStructure {
-//    let date: String?
-//    let note: String?
+//    let dates: String
+//    let notes: String
 //}

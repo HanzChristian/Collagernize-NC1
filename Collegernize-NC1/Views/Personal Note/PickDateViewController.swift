@@ -16,6 +16,7 @@ class PickDateViewController:UIViewController{
     @IBOutlet weak var dateTxt: UITextField!
     let datePicker = UIDatePicker()
     
+    var models: [(dates: String, notes: String)] = [] //isi array
     
     override func viewDidLoad() {
         createDatePicker()

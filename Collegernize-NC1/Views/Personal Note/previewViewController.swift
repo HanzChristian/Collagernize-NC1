@@ -11,10 +11,14 @@ import UIKit
 class previewViewController:UIViewController{
     
     @IBOutlet var noteTextView: UITextView!
+    @IBOutlet var dateLabel: UILabel!
+    
+    public var dates:String = ""
     public var note:String = ""
     
     
     override func viewDidLoad() {
+        dateLabel.text = dates
         noteTextView.text = note
     }
 }

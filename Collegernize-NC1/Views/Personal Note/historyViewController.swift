@@ -14,6 +14,7 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet var label: UILabel!
     
     var date:String?
+    
     var models: [(dates: String, notes: String)] = [] //isi array
     
     
@@ -25,12 +26,6 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @IBAction func didTapNewNote(){
-//        guard let vc = storyboard?.instantiateViewController(withIdentifier: "note") as? notesViewController else{
-//            return
-//        }
-//        vc?.date = date!
-//        navigationController?.pushViewController(vc, animated: true)
-        
         performSegue(withIdentifier: "notesSegue", sender: self)
         
     }
@@ -40,9 +35,8 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
             let destinationVC = segue.destination as? notesViewController
             destinationVC?.date = date
                 
-            destinationVC?.completion = {noteDate,note in
-            self.models.append((dates: noteDate,notes: note))
-            self.label.isHidden = true
+            destinationVC?.completion = {date,note in
+            self.models.append((dates: date,notes: note))
             self.table.isHidden = false
             self.table.reloadData()
             }
@@ -64,13 +58,12 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         
         let model = models[indexPath.row]
-        //show note controller
         
         guard let vc = storyboard?.instantiateViewController(identifier: "note") as? previewViewController else{
             return
         }
-        vc.title = date
         vc.note = model.notes
+        vc.dates = model.dates
         navigationController?.pushViewController(vc, animated: true)
     }
     

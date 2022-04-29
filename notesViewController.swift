@@ -8,24 +8,57 @@
 import Foundation
 import UIKit
 
-class notesViewController:UIViewController{
+class notesViewController:UIViewController, UITextViewDelegate{
     
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var noteTextView: UITextView!
     
     var date:String?
+
     
     public var completion: ((String,String) -> Void)?
     override func viewDidLoad() {
+        noteTextView.text = "Type here to write..."
         dateLabel.text = date
+        noteTextView.delegate = self
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "done", style: .done, target: self, action: #selector(didTapDone))
     }
     
     @objc func didTapDone(){
         if let text = dateLabel.text, !text.isEmpty, !noteTextView.text.isEmpty{
-            completion?(text,noteTextView.text)
+            completion?(dateLabel.text!,noteTextView.text)
+            if noteTextView.text.isEmpty || noteTextView.text == "" || noteTextView.text == "Input your story here..." {
+                displayAlert(title: "Warning!", body: "Please input something first before it saved!", isDisplayDetail: false)
+            } else {
+                displayAlert(title: "Yeayyy!", body: "Diary has been saved!", isDisplayDetail: true)
+            }
         }
     }
+    
+    func displayAlert(title: String, body: String, isDisplayDetail: Bool) {
+        
+        let alert = UIAlertController.init(title: title, message: body, preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default) { action in
+            alert.dismiss(animated: true) {
+                if isDisplayDetail {
+                }
+            }
+        }
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        noteTextView.text = ""
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "doneSegue"{
+//                let destinationVC = segue.destination as? previewViewController
+//            destinationVC?.dates = date!
+//            }
+//    }
     
 }
