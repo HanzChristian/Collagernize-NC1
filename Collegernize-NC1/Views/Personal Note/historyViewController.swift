@@ -64,7 +64,8 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
         }
         vc.note = model.notes
         vc.dates = model.dates
-        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .popover
+        present(vc,animated: true,completion: nil)
     }
     
 }

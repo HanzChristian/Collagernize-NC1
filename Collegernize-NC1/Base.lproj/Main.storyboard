@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j9H-kC-TP6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -137,7 +137,7 @@ No stress. No depress. Be success</string>
         <!--HomePageController-->
         <scene sceneID="n51-1Q-bmF">
             <objects>
-                <viewController storyboardIdentifier="HomePageController" title="HomePageController" id="j9H-kC-TP6" customClass="HomePageController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageController" title="HomePageController" id="j9H-kC-TP6" customClass="HomePageController" customModule="Collegernize_NC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SUq-LP-vqx">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -351,7 +351,7 @@ No stress. No depress. Be success</string>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                 <connections>
-                                    <segue destination="j9H-kC-TP6" kind="presentation" modalPresentationStyle="fullScreen" id="Y4s-xM-J3h"/>
+                                    <action selector="backBtn:" destination="u3Y-Xz-nPp" eventType="touchUpInside" id="NKx-BZ-cXF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -364,6 +364,7 @@ No stress. No depress. Be success</string>
                     <connections>
                         <outlet property="dateTxt" destination="I8a-kJ-VfN" id="DS3-Ih-JpN"/>
                         <segue destination="RUc-wg-jxC" kind="show" identifier="historySegue" id="f1q-3Z-LtI"/>
+                        <segue destination="j9H-kC-TP6" kind="presentation" identifier="homeSegue" modalPresentationStyle="fullScreen" id="TaW-GC-OXt"/>
                     </connections>
                 </viewController>
             </objects>
@@ -383,21 +384,21 @@ No stress. No depress. Be success</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Ii6-cg-heO" detailTextLabel="d9d-5Z-r7E" style="IBUITableViewCellStyleSubtitle" id="u7J-0P-MjO">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="49.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u7J-0P-MjO" id="Yhg-eI-kux">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="49.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ii6-cg-heO">
-                                                    <rect key="frame" x="19.999999999999996" y="7" width="32.666666666666664" height="18"/>
+                                                    <rect key="frame" x="19.999999999999996" y="8.3333333333333357" width="32.666666666666664" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d9d-5Z-r7E">
-                                                    <rect key="frame" x="19.999999999999996" y="25" width="40.666666666666664" height="13.333333333333334"/>
+                                                    <rect key="frame" x="19.999999999999996" y="27.999999999999996" width="40.666666666666664" height="13.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -490,8 +491,15 @@ No stress. No depress. Be success</string>
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Juny 2,2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8Y-cH-xZa">
+                                <rect key="frame" x="16" y="44" width="234" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-TB-tG1">
-                                <rect key="frame" x="16" y="165" width="358" height="660"/>
+                                <rect key="frame" x="16" y="96" width="358" height="660"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
@@ -499,13 +507,6 @@ No stress. No depress. Be success</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Juny 2,2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8Y-cH-xZa">
-                                <rect key="frame" x="16" y="120" width="234" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cmm-LH-yXJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -540,6 +541,9 @@ No stress. No depress. Be success</string>
             <point key="canvasLocation" x="945" y="910"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TaW-GC-OXt"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Appname" width="256" height="40"/>
         <image name="Graduate" width="395" height="400"/>

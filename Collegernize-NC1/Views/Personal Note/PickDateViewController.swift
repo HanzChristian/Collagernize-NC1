@@ -70,4 +70,10 @@ class PickDateViewController:UIViewController{
             }
     }
     
+    @IBAction func backBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "homeSegue", sender: nil)
+    }
+    
+
+    
 }
