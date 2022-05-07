@@ -35,6 +35,7 @@ class notesViewController:UIViewController, UITextViewDelegate{
                 displayAlert(title: "Yeayyy!", body: "Diary has been saved!", isDisplayDetail: true)
             }
         }
+        
     }
     
     func displayAlert(title: String, body: String, isDisplayDetail: Bool) {

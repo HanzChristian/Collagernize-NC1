@@ -50,7 +50,7 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
         cell.textLabel?.text = models[indexPath.row].dates
-        cell.textLabel?.text = models[indexPath.row].notes
+        cell.detailTextLabel?.text = models[indexPath.row].notes
         return cell
     }
     
