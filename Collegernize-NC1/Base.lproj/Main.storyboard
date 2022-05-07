@@ -204,7 +204,8 @@ No stress. No depress. Be success</string>
                                     <color key="baseBackgroundColor" red="0.35686274509999999" green="0.49019607840000001" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="ARX-eJ-53b" kind="presentation" modalPresentationStyle="fullScreen" id="E5T-Nr-4OF"/>
+                                    <action selector="notesBtn:" destination="j9H-kC-TP6" eventType="touchUpInside" id="KDm-6a-WZ2"/>
+                                    <segue destination="ARX-eJ-53b" kind="presentation" identifier="notesSegue" modalPresentationStyle="fullScreen" id="E5T-Nr-4OF"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="note.text" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7rM-Qw-AR3">
@@ -513,7 +514,7 @@ No stress. No depress. Be success</string>
         <!--historyViewController-->
         <scene sceneID="AXk-uO-ix7">
             <objects>
-                <viewController storyboardIdentifier="back" title="historyViewController" id="RUc-wg-jxC" customClass="historyViewController" customModule="Collegernize_NC1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="history" title="historyViewController" id="RUc-wg-jxC" customClass="historyViewController" customModule="Collegernize_NC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nzv-hM-aHY">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -663,7 +664,7 @@ No stress. No depress. Be success</string>
         <!--Navigation Controller-->
         <scene sceneID="iX9-My-HpD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ARX-eJ-53b" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ARX-eJ-53b" customClass="navigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gL2-hL-h8k"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wys-40-DDi">

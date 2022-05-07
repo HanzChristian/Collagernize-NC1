@@ -18,6 +18,7 @@ class notesViewController:UIViewController, UITextViewDelegate{
 
     
     public var completion: ((String,String) -> Void)?
+    
     override func viewDidLoad() {
         noteTextView.text = "Type here to write..."
         dateLabel.text = date
@@ -28,7 +29,7 @@ class notesViewController:UIViewController, UITextViewDelegate{
     
     @objc func didTapDone(){
         if let text = dateLabel.text, !text.isEmpty, !noteTextView.text.isEmpty{
-            completion?(dateLabel.text!,noteTextView.text)
+            completion?(dateLabel.text!,noteTextView.text) //passing data
             if noteTextView.text.isEmpty || noteTextView.text == "" || noteTextView.text == "Input your story here..." {
                 displayAlert(title: "Warning!", body: "Please input something first before it saved!", isDisplayDetail: false)
             } else {
@@ -43,8 +44,9 @@ class notesViewController:UIViewController, UITextViewDelegate{
         let alert = UIAlertController.init(title: title, message: body, preferredStyle: UIAlertController.Style.alert)
         let alertAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default) { action in
             alert.dismiss(animated: true) {
-                if isDisplayDetail {
-                }
+//                if isDisplayDetail {
+//                    self.performSegue(withIdentifier: "personalNotesSegue", sender: .none)
+//                }
             }
         }
         alert.addAction(alertAction)

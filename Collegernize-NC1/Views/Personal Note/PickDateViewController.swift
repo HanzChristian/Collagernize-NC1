@@ -16,7 +16,8 @@ class PickDateViewController:UIViewController{
     @IBOutlet weak var dateTxt: UITextField!
     let datePicker = UIDatePicker()
     
-    var models: [(dates: String, notes: String)] = [] //isi array
+    var noteModels = notesFeeder()
+//    var models: [(dates: String, notes: String)] = [] //isi array
     
     override func viewDidLoad() {
         createDatePicker()
@@ -67,6 +68,7 @@ class PickDateViewController:UIViewController{
         if segue.identifier == "historySegue"{
                 let destinationVC = segue.destination as? historyViewController
                 destinationVC?.date = dateTxt.text
+                destinationVC?.noteModels = noteModels
             }
     }
     

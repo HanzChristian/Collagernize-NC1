@@ -15,7 +15,9 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
     
     var date:String?
     
-    var models: [(dates: String, notes: String)] = [] //isi array
+    var noteModels = notesFeeder()
+    
+//    var models: [(dates: String, notes: String)] = [] //isi array
     
     
     override func viewDidLoad() {
@@ -23,6 +25,10 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
         table.delegate = self
         table.dataSource = self
         title = "All Notes"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        table.reloadData()
     }
     
     @IBAction func didTapNewNote(){
@@ -36,7 +42,7 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
             destinationVC?.date = date
                 
             destinationVC?.completion = {date,note in
-            self.models.append((dates: date,notes: note))
+            self.noteModels.models.append((dates: date,notes: note))
             self.table.isHidden = false
             self.table.reloadData()
             }
@@ -44,20 +50,20 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return noteModels.models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
-        cell.textLabel?.text = models[indexPath.row].dates
-        cell.detailTextLabel?.text = models[indexPath.row].notes
+        cell.textLabel?.text = noteModels.models[indexPath.row].dates
+        cell.detailTextLabel?.text = noteModels.models[indexPath.row].notes
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let model = models[indexPath.row]
+        let model = noteModels.models[indexPath.row]
         
         guard let vc = storyboard?.instantiateViewController(identifier: "note") as? previewViewController else{
             return

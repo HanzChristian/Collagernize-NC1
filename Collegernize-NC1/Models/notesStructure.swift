@@ -9,6 +9,14 @@
 //import UIKit
 //
 //struct notesStructure {
+//
 //    let dates: String
 //    let notes: String
+////
+////    init(dates:String,notes:String){
+////        self.dates = dates
+////        self.notes = notes
+////
+////    }
 //}
+
