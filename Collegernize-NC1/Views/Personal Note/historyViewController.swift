@@ -29,6 +29,7 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         table.reloadData()
+        table.isHidden = false
     }
     
     @IBAction func didTapNewNote(){
@@ -42,7 +43,7 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
             destinationVC?.date = date
                 
             destinationVC?.completion = {date,note in
-            self.noteModels.models.append((dates: date,notes: note))
+                self.noteModels.models.append((dates: date,notes: note))
             self.table.isHidden = false
             self.table.reloadData()
             }

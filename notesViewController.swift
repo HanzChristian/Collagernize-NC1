@@ -28,12 +28,12 @@ class notesViewController:UIViewController, UITextViewDelegate{
     }
     
     @objc func didTapDone(){
-        if let text = dateLabel.text, !text.isEmpty, !noteTextView.text.isEmpty{
-            completion?(dateLabel.text!,noteTextView.text) //passing data
-            if noteTextView.text.isEmpty || noteTextView.text == "" || noteTextView.text == "Input your story here..." {
+        if let text = noteTextView.text, !text.isEmpty, !noteTextView.text.isEmpty{
+            if text.isEmpty || text == "" || text == "Type here to write..." {
                 displayAlert(title: "Warning!", body: "Please input something first before it saved!", isDisplayDetail: false)
             } else {
                 displayAlert(title: "Yeayyy!", body: "Diary has been saved!", isDisplayDetail: true)
+                completion?(dateLabel.text!,noteTextView.text) //passing data
             }
         }
         
