@@ -10,14 +10,8 @@ import UIKit
 
 class MainView:UIViewController{
     
-    
-//    @IBAction func backPressed(_ sender: UIButton) {
-//        guard let vc = storyboard?.instantiateViewController(identifier: "HomePageController") as? HomePageController else{
-//            return
-//        }
-//        
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc,animated: true,completion: nil)
-//    }
+    override func viewDidLoad() {
+//        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+    }
     
 }

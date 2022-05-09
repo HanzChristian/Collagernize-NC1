@@ -19,6 +19,7 @@ class PickDateViewController:UIViewController{
     var noteModels = notesFeeder()
     
     override func viewDidLoad() {
+//        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         createDatePicker()
     }
     
@@ -59,8 +60,29 @@ class PickDateViewController:UIViewController{
         self.view.endEditing(true)
     }
     
+    func displayAlert(title: String, body: String, isDisplayDetail: Bool) {
+        
+        let alert = UIAlertController.init(title: title, message: body, preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default) { action in
+            alert.dismiss(animated: true) {
+//                if isDisplayDetail {
+//                    self.performSegue(withIdentifier: "personalNotesSegue", sender: .none)
+//                }
+            }
+        }
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func continueBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: "historySegue", sender: self)
+        if let text = dateTxt.text{
+            if text.isEmpty || text == ""{
+                displayAlert(title: "Warning!", body: "Please input something first before it saved!", isDisplayDetail: false)
+            } else {
+                performSegue(withIdentifier: "historySegue", sender: self)
+            }
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

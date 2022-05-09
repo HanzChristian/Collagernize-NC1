@@ -706,6 +706,7 @@ No stress. No depress. Be success</string>
             <point key="canvasLocation" x="74" y="85"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.10196078431372549" green="0.074509803921568626" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="Appname" width="256" height="40"/>
         <image name="Graduate" width="395" height="400"/>
