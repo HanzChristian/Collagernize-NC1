@@ -28,7 +28,7 @@ class notesViewController:UIViewController, UITextViewDelegate{
     }
     
     @objc func didTapDone(){
-        if let text = noteTextView.text, !text.isEmpty, !noteTextView.text.isEmpty{
+        if let text = noteTextView.text{
             if text.isEmpty || text == "" || text == "Type here to write..." {
                 displayAlert(title: "Warning!", body: "Please input something first before it saved!", isDisplayDetail: false)
             } else {

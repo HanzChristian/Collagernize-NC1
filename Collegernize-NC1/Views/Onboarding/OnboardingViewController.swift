@@ -42,12 +42,9 @@ class OnboardingViewController: UIViewController {
     @IBAction func nextBtnClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1{ //last page
             //segue ke home
-            let controller = storyboard?.instantiateViewController(withIdentifier: "HomePageController") as! UIViewController
-            controller.modalPresentationStyle = .fullScreen //mengatur presentasi next view
-            controller.modalTransitionStyle = .flipHorizontal //mengatur hasil transisi next view
-            present(controller,animated: true,completion: nil)
-            
+            performSegue(withIdentifier: "homeSegue", sender: .none)
         }
+        
         else{
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)

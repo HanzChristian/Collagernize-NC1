@@ -20,7 +20,6 @@
 		158E824F2819309F0044E1F3 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E824E2819309F0044E1F3 /* OnboardingSlide.swift */; };
 		158E8251281939E30044E1F3 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E8250281939E30044E1F3 /* OnboardingCollectionViewCell.swift */; };
 		158E8254281988110044E1F3 /* PickDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E8253281988110044E1F3 /* PickDateViewController.swift */; };
-		158E825A281A6A270044E1F3 /* notesStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E8259281A6A270044E1F3 /* notesStructure.swift */; };
 		158E825E281A73E20044E1F3 /* notesFeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E825D281A73E20044E1F3 /* notesFeeder.swift */; };
 		158E8260281A7C360044E1F3 /* notesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E825F281A7C360044E1F3 /* notesViewController.swift */; };
 		158E8262281A7C400044E1F3 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158E8261281A7C400044E1F3 /* historyViewController.swift */; };
@@ -65,7 +64,6 @@
 		158E824E2819309F0044E1F3 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		158E8250281939E30044E1F3 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		158E8253281988110044E1F3 /* PickDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateViewController.swift; sourceTree = "<group>"; };
-		158E8259281A6A270044E1F3 /* notesStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesStructure.swift; sourceTree = "<group>"; };
 		158E825D281A73E20044E1F3 /* notesFeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesFeeder.swift; sourceTree = "<group>"; };
 		158E825F281A7C360044E1F3 /* notesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = notesViewController.swift; path = ../../../notesViewController.swift; sourceTree = "<group>"; };
 		158E8261281A7C400044E1F3 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				158E824E2819309F0044E1F3 /* OnboardingSlide.swift */,
-				158E8259281A6A270044E1F3 /* notesStructure.swift */,
 				158E825D281A73E20044E1F3 /* notesFeeder.swift */,
 			);
 			path = Models;
@@ -354,7 +351,6 @@
 				158E8209281905680044E1F3 /* AppDelegate.swift in Sources */,
 				158E820B281905680044E1F3 /* SceneDelegate.swift in Sources */,
 				158E8260281A7C360044E1F3 /* notesViewController.swift in Sources */,
-				158E825A281A6A270044E1F3 /* notesStructure.swift in Sources */,
 				158E8254281988110044E1F3 /* PickDateViewController.swift in Sources */,
 				15A8CC7428269848008250BE /* LastTips.swift in Sources */,
 				158E8262281A7C400044E1F3 /* historyViewController.swift in Sources */,
@@ -541,8 +537,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX9VA5G2BF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Collegernize-NC1/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Collegernize-NC1";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -568,8 +566,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BX9VA5G2BF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Collegernize-NC1/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Collegernize-NC1";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

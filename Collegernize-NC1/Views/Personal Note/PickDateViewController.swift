@@ -17,7 +17,6 @@ class PickDateViewController:UIViewController{
     let datePicker = UIDatePicker()
     
     var noteModels = notesFeeder()
-//    var models: [(dates: String, notes: String)] = [] //isi array
     
     override func viewDidLoad() {
         createDatePicker()
@@ -73,14 +72,14 @@ class PickDateViewController:UIViewController{
     }
     
     
-    @IBAction func backPressed(_ sender: UIButton) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "HomePageController") as? HomePageController else{
-            return
-        }
-        
-        vc.modalPresentationStyle = .fullScreen
-        present(vc,animated: true,completion: nil)
-    }
+//    @IBAction func backPressed(_ sender: UIButton) {
+//        guard let vc = storyboard?.instantiateViewController(identifier: "HomePageController") as? HomePageController else{
+//            return
+//        }
+//
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc,animated: true,completion: nil)
+//    }
     
 
     

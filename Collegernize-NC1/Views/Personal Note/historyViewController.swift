@@ -17,8 +17,6 @@ class historyViewController:UIViewController,UITableViewDelegate,UITableViewData
     
     var noteModels = notesFeeder()
     
-//    var models: [(dates: String, notes: String)] = [] //isi array
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

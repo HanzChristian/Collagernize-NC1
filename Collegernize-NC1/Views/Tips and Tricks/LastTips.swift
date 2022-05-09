@@ -12,14 +12,7 @@ class LastTips:UIViewController{
     
     
     @IBAction func finishPressed(_ sender: UIButton){
-        
-        guard let vc = storyboard?.instantiateViewController(identifier: "HomePageController") as? HomePageController else{
-            return
-        }
-        
-        vc.modalPresentationStyle = .fullScreen
-        present(vc,animated: true,completion: nil)
-        
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

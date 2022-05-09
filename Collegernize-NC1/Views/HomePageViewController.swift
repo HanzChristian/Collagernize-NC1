@@ -10,6 +10,9 @@ import UIKit
 
 class HomePageController:UIViewController{
     
+    override func viewDidLoad() {
+    }
+    
     var noteModels = notesFeeder()
     
     @IBAction func notesBtn(_ sender: UIButton) {
@@ -18,14 +21,9 @@ class HomePageController:UIViewController{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "notesSegue"{
-           if let destinationVC = segue.destination as? UINavigationController,
-              let targetController = destinationVC.topViewController as? PickDateViewController{
-                targetController.noteModels = noteModels
-            }
+           let destinationVC = segue.destination as? PickDateViewController
+                destinationVC?.noteModels = noteModels
             }
         }
     
-    override func viewDidLoad() {
-        
-    }
 }
